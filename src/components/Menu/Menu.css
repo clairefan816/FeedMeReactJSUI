@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Neucha');
+
+.menu-container{
+    margin-top: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 0;
+    /* width: 80%; */
+    background-color: #FBECEC;
+}
+
+/* $break-small: 700px;
+$break-large: 900px;
+$break-md: 1281px; */
+
+.list-container {
+    display:block;
+    width: 80%;
+    padding: 0 1rem;
+    margin-top: 3.5rem;
+    height:100%;
+    overflow-y: auto;
+    @media screen and (max-width: $break-small) {
+        width: 100%;
+        margin-top: 4rem;
+        padding-bottom: 30vh;
+        }
+    @media screen and (min-width: $break-small) and (max-width: 900px) {
+        width: 70%;
+    }
+}
+
+
+.item-container{
+    width: calc(25% - 2rem);
+    padding: 1rem;
+    text-align: center;
+    display: inline-block;
+    margin: 1rem;
+    overflow: hidden;
+    color: #333;
+    position: relative;
+    text-transform:capitalize;
+    @media screen and (max-width: $break-small) {
+        width: 50%;
+        margin: 0;
+    }
+    @media screen and (min-width: $break-small) and (max-width: $break-large) {
+        width: calc(50% - 2rem);
+    }
+    @media screen and (min-width: $break-large) and (max-width: $break-md) {
+        width: calc(33.33% - 2rem);
+    }
+}
+
+.item-container:hover{
+    /* background: #eee; */
+    background: #F7DAD9;
+    border-radius: 15px;
+}
+
+.item-container h3{
+    float: none;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    /* padding: 1rem; */
+    @media screen and (max-width: $break-small) {
+        padding: .5rem;
+    }
+}
+
+button{
+    border: none;
+    background: #e55;
+    color:#fff;
+    padding:.7rem;
+    width: 100%;
+    margin: .5rem .5rem 0 0;
+    outline: none;
+    cursor: pointer;
+    @media screen and (max-width: $break-small) {
+        width: 100%;
+        margin: .2rem 0;
+    }
+}
+
+button:hover{
+    background-color: #FFB0B0;
+}
+
+
+

@@ -1,0 +1,49 @@
+.navbar{
+    float: left;
+    width: 96%;
+    margin: 0 2%;
+    padding: .8rem 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #e55;
+    text-align: center;
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 8px 10px -6px rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    @media screen and (max-width: $break-small) {
+        padding: .7rem;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+
+.logo{
+    display: inline-block;
+    /* @media screen and (max-width: $break-small) {
+        float: left;
+    } */
+}
+
+.logo_image{
+    /* transform: rotate(-10deg); */
+    width: 4rem;
+    height: 4rem;
+    float: left;
+}
+
+h1{
+    float: left;
+    padding: 0 .7rem 0;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-family: 'Righteous', cursive;
+    @media screen and (max-width: $break-small) {
+        font-size: 1.5rem;
+        padding-top: 0;
+    }
+}
+
