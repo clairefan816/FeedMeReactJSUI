@@ -13,8 +13,8 @@
     transition: .5s all;
     background: #eee;
     color: #06386d;
-    top: 5rem; 
-    right: 1%;
+    top: 7rem;
+    right: 2%;
     padding: .5rem 1rem;
     border-radius: 5px;
     box-shadow: 2px 2px 7px #ccc;
@@ -22,21 +22,21 @@
     letter-spacing: 1px;
     line-height: 1.5;
 
-    @media screen and (min-width: $break-small) and (max-width: $break-large) {
-        width: 29%;
-    }
-    @media screen and (max-width: $break-small) {
-        top:auto;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        box-shadow: none;
-        width: 100%;
-        max-height: 30vh;
-        overflow: auto;
-        border-radius: 0;
-        border: 5px solid #fff;
-    }
+    /*@media screen and (min-width: $break-small) and (max-width: $break-large) {*/
+    /*    width: 29%;*/
+    /*}*/
+    /*@media screen and (max-width: $break-small) {*/
+    /*    top:auto;*/
+    /*    left: 0;*/
+    /*    bottom: 0;*/
+    /*    right: 0;*/
+    /*    box-shadow: none;*/
+    /*    width: 100%;*/
+    /*    max-height: 30vh;*/
+    /*    overflow: auto;*/
+    /*    border-radius: 0;*/
+    /*    border: 5px solid #fff;*/
+    /*}*/
 }
 
 .popup .cart .cart_item{

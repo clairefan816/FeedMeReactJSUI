@@ -13,11 +13,11 @@
     background: #fff;
     box-shadow: 0 8px 10px -6px rgba(0, 0, 0, .2);
     border-bottom: 1px solid rgba(0, 0, 0, .1);
-    @media screen and (max-width: $break-small) {
-        padding: .7rem;
-        width: 100%;
-        margin: 0;
-    }
+    /*@media screen and (max-width: $break-small) {*/
+    /*    padding: .7rem;*/
+    /*    width: 100%;*/
+    /*    margin: 0;*/
+    /*}*/
 }
 
 
@@ -26,6 +26,7 @@
     /* @media screen and (max-width: $break-small) {
         float: left;
     } */
+    transform: translateX(-100px);
 }
 
 .logo_image{
@@ -41,9 +42,12 @@ h1{
     font-size: 1.5rem;
     letter-spacing: 5px;
     font-family: 'Righteous', cursive;
-    @media screen and (max-width: $break-small) {
-        font-size: 1.5rem;
-        padding-top: 0;
-    }
+    /*@media screen and (max-width: 700px) {*/
+    /*    font-size: 1.5rem;*/
+    /*    padding-top: 0;*/
+    /*}*/
 }
 
+.userCart{
+    float:right;
+}

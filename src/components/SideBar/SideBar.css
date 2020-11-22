@@ -1,0 +1,33 @@
+.SideBar {
+    float: left;
+    width: 96%;
+    margin: 10% 2%;
+    padding: .8rem 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #e55;
+    text-align: center;
+    font-size: 1.7rem;
+    transform: translateX(-80px);
+}
+
+.rest{
+    display: inline-block;
+}
+
+.logo_image{
+    /* transform: rotate(-10deg); */
+    width: 4rem;
+    height: 4rem;
+    float: left;
+}
+
+.restName{
+    float: left;
+    padding: 0 .7rem 0;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-family: 'Righteous', cursive;
+}
