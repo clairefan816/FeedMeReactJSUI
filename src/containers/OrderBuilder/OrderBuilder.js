@@ -8,9 +8,6 @@ import cupcake from '../../components/Menu/cupcake.png'
 class OrderBuilder extends Component {
     constructor(props){
         super(props);
-
-
-
         this.state ={
             items: [
                 { id: 'item_1001', name: 'Cupcake1', src: cupcake, cost: 1, quantity: 0},
@@ -22,10 +19,8 @@ class OrderBuilder extends Component {
             deliveryCharges: 7,
             packaging: 3,
             totalPrice: 5,
-            userName: "None"
+            userName:"Claire"
         }
-
-
     }
 
     render() {
@@ -34,20 +29,6 @@ class OrderBuilder extends Component {
                 <Cart content={this.state}/>
             </Aux>
         )
-    }
-
-    componentDidMount() {
-
-        fetch('http://localhost:5000/user/5fba12c5e77994431594fd9a')
-            .then(response => response.json())
-            .then((result) => {
-                console.log(result);
-                let name = result.name;
-                this.setState(
-                    {userName: name}
-                );
-            })
-            .catch((error) => { console.log(error.message)})
     }
 }
 
