@@ -4,6 +4,7 @@ import Menu from '../../components/Menu/Menu';
 import Cart from '../../components/Cart/Cart';
 import cupcake from '../../components/Menu/cupcake.png'
 
+
 class OrderBuilder extends Component {
     constructor(props){
         super(props);
@@ -17,7 +18,8 @@ class OrderBuilder extends Component {
             itemsPrice: 10,
             deliveryCharges: 7,
             packaging: 3,
-            totalPrice: 5
+            totalPrice: 5,
+            userName:"Claire"
         }
     }
 
