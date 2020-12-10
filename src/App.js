@@ -1,26 +1,46 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Header from './components/Header/Header';
 import OrderBuilder from './containers/OrderBuilder/OrderBuilder';
-import MenuBuilder from './containers/MenuBuilder/MenuBuilder'
-import Success from './components/Success/Success'
-import {BrowserRouter, HashRouter, NavLink, Switch, Route} from "react-router-dom";
+import Status from './components/Status/Status'
+import {BrowserRouter, HashRouter, Redirect, Switch, Route} from "react-router-dom";
 import SideBar from "./components/SideBar/SideBar";
+import Credential from "./components/Credential/Credential"
+import Pickup from "./components/Pickup/Pickup"
 
 
 class App extends Component {
-  render (){
-    return (
-      <BrowserRouter forceRefresh={true}>
-        <Header />
-        <SideBar />
-        <MenuBuilder />
-        <Switch>
-            <Route path='/home' component={OrderBuilder}/>
-            <Route path='/success' component={Success} />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
+
+    state = {
+        updateCart : 0
+    }
+
+    updateCart = () => {
+        this.setState({
+            updateCart : 1 - this.state.updateCart
+        })
+    }
+    render() {
+        return (
+            <BrowserRouter forceRefresh={true}>
+                <Header/>
+                <Switch>
+                    <Redirect from="/" exact to="/login" />
+                    <Route path='/login' component={Credential} />
+                    <Route path='/home' render={() => {
+                        if (window.sessionStorage.getItem("userType") === "customer") {
+                            return <>
+                                <SideBar onChange={this.updateCart}/>
+                                <OrderBuilder updateCart={this.state.updateCart}/>}
+                            </>
+                        } else if (window.sessionStorage.getItem("userType") === "courier") {
+                            return <Pickup/>
+                        }
+                    }}/>
+                    <Route path='/status' render={(props) => <Status {...props}/>}/>
+                </Switch>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;

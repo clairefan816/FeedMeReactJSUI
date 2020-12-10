@@ -1,0 +1,23 @@
+.Pickup {
+    width: 96%;
+    margin: 20% 10%;
+    padding: .8rem 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #000000;
+    text-align: center;
+    font-size: 1.2rem;
+    transform: translateX(-80px);
+}
+
+.Error {
+    margin: 0 17% 0 20%;
+    color: #ee5555;
+}
+
+.Success {
+    margin: 0 17% 0 20%;
+    color: #008000;
+}

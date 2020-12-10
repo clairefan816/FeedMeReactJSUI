@@ -1,35 +1,36 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Aux from '../../hoc/Aux/Aux';
+import './MenuBuilder.css'
 import Menu from '../../components/Menu/Menu';
 import Cart from '../../components/Cart/Cart';
-import cupcake from '../../components/Menu/cupcake.png'
+import cupcake from '../../assets/cupcake.png'
+import PropTypes from 'prop-types';
+import SideBar from "../../components/SideBar/SideBar"
 
 class MenuBuilder extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-            items: [
-                { id: 'item_1001', name: 'Cupcake1', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1002', name: 'Cupcake2', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1003', name: 'Cupcake3', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1004', name: 'Cupcake4', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1005', name: 'Cupcake5', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1006', name: 'Cupcake6', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1007', name: 'Cupcake7', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1008', name: 'Cupcake8', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1009', name: 'Cupcake9', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1010', name: 'Cupcake10', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1011', name: 'Cupcake11', src: cupcake, cost: 1, quantity: 0},
-                { id: 'item_1012', name: 'Cupcake12', src: cupcake, cost: 1, quantity: 0},
-            ],
-        }
     }
 
-    render(){
-        return(
-            <Menu menuList={this.state} />
+    render() {
+        return (
+            <div className='menu-container'>
+                <div className="list-container">
+                    {this.props.menu.map((meal) => {
+                        return <Menu mealId={meal.mealId} mealName={meal.mealName}
+                                     mealPrice={meal.mealPrice} key={meal.mealId}
+                                     onChange = {this.props.onChange}
+                        />
+                    })}
+                </div>
+            </div>
         )
     }
+}
+
+MenuBuilder.protoType = {
+    menu: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired
 }
 
 export default MenuBuilder;

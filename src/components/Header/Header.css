@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     float: left;
     width: 96%;
     margin: 0 2%;
@@ -21,7 +21,7 @@
 }
 
 
-.logo{
+.logo {
     display: inline-block;
     /* @media screen and (max-width: $break-small) {
         float: left;
@@ -29,14 +29,19 @@
     transform: translateX(-100px);
 }
 
-.logo_image{
+.logo_image {
     /* transform: rotate(-10deg); */
     width: 4rem;
     height: 4rem;
     float: left;
+    vertical-align: middle;
 }
 
-h1{
+p {
+    cursor: pointer;
+}
+
+h1 {
     float: left;
     padding: 0 .7rem 0;
     font-size: 1.5rem;
@@ -48,6 +53,6 @@ h1{
     /*}*/
 }
 
-.userCart{
-    float:right;
+.userCart {
+    float: right;
 }

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Neucha');
+
+.menu-container{
+    margin-top: 18%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 0;
+    /* width: 80%; */
+    background-color: #FBECEC;
+    transform: translateY(50px);
+}
+
+
+
+.list-container {
+    display:block;
+    width: 80%;
+    padding: 0 1rem;
+    margin-top: 3.5rem;
+    height:100%;
+    overflow-y: auto;
+    /*@media screen and (max-width: 700px) {*/
+    /*    width: 100%;*/
+    /*    margin-top: 4rem;*/
+    /*    padding-bottom: 30vh;*/
+    /*    }*/
+    /*@media screen and (min-width: 700px) and (max-width: 900px) {*/
+    /*    width: 70%;*/
+    /*}*/
+}
