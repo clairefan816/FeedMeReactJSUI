@@ -94,25 +94,39 @@ class Credential extends Component {
                             console.log('Error happens when registering user');
                         }
                     );
-            }
-        } else {
-            axios.get(`http://0.0.0.0:5000/user/${this.state.userId}`)
-                .then(
-                    res => {
-                        if (res.data.password === this.state.password) {
+            } else if (this.state.userType === 'restaurant') {
+                const restaurantInfo = {
+                    name: this.state.name,
+                    email: this.state.email,
+                    location: this.state.location,
+                }
+                axios.post('http://0.0.0.0:5000/restaurant', {...restaurantInfo})
+                    .then(
+                        res => {
                             this.loggedInPostAction(res.data);
-                        } else {
+                        },
+                        rej => {
+                            console.log('Error happens when registering user');
+                        }
+                    );}
+            } else {
+                axios.get(`http://0.0.0.0:5000/user/${this.state.userId}`)
+                    .then(
+                        res => {
+                            if (res.data.password === this.state.password) {
+                                this.loggedInPostAction(res.data);
+                            } else {
+                                this.setState({showError: true});
+                            }
+
+                        },
+                        rej => {
                             this.setState({showError: true});
                         }
-
-                    },
-                    rej => {
-                        this.setState({showError: true});
-                    }
-                );
+                    );
+            }
+            event.preventDefault();
         }
-        event.preventDefault();
-    }
 
     render() {
         if (window.sessionStorage.getItem("loggedin") === 'true' && window.sessionStorage.getItem("userId")) {
@@ -120,14 +134,15 @@ class Credential extends Component {
         } else {
             return (
                 <div className="Login">
+                    <h2>Log In</h2>
                     <form onSubmit={this.submit}>
                         {
                             !this.state.switchToRegister &&
                             <>
-                                <label htmlFor="userId">UserName: </label>
-                                <input type="text" name="userId" onChange={this.handleUserIdChange}/><br/><br/>
-                                <label htmlFor="password">Password: </label>
-                                <input type="text" name="password" onChange={this.handlePasswordChange}/>
+                                <label htmlFor="userId"><i className="material-icons">person</i>&nbsp;</label>
+                                <input type="text" name="userId" placeholder="Username" onChange={this.handleUserIdChange}/><br/><br/>
+                                <label htmlFor="password"><i className="material-icons">lock</i>&nbsp;</label>
+                                <input type="text" name="password" placeholder="Password" onChange={this.handlePasswordChange}/>
                                 <br/>
                                 <br/>
                             </>
@@ -135,13 +150,18 @@ class Credential extends Component {
                         {
                             this.state.switchToRegister &&
                             <>
+                            <div>
                                 <label>
                                     Choose type of user: {"  "}
-                                    <select value={this.state.userType} onChange={this.handleUserTypeChange}>
-                                        <option value='customer'>Customer</option>
-                                        <option value='courier'>Courier</option>
-                                    </select>
-                                </label><br/><br/>
+
+                                        <select value={this.state.userType} onChange={this.handleUserTypeChange}>
+                                            <option value='customer'>Customer</option>
+                                            <option value='restaurant'>Restaurant</option>
+                                            <option value='courier'>Courier</option>
+                                        </select>
+                                </label>
+                            </div>
+                                <br/><br/>
                             </>
                         }
                         {
@@ -168,12 +188,26 @@ class Credential extends Component {
                                 <input type="text" name="location" onChange={this.handleLocationChange}/><br/><br/>
                             </>
                         }
-                        <input className="ButtonSubmit" type="submit" value="Submit"/>
+                        {
+                            this.state.switchToRegister && this.state.userType === 'restaurant' &&
+                            <>
+                                <label htmlFor="name">Name: </label>
+                                <input type="text" name="name" onChange={this.handleNameChange}/><br/><br/>
+                                <label htmlFor="email">Email: </label>
+                                <input type="text" name="email" onChange={this.handleEmailChange}/><br/><br/>
+                                <label htmlFor="location">Location: </label>
+                                <input type="text" name="location" onChange={this.handleLocationChange}/><br/><br/>
+                            </>
+                        }
+                        <div>
+                            <input className="ButtonSubmit" type="submit" value="Submit"/>
+                        </div>
+
                         {
                             !this.state.switchToRegister &&
                             <p className="SignUp" onClick={() => {
                                 this.switchToRegister()
-                            }}>Sign Up</p>
+                            }}>Don't have an account? Register Here</p>
                         }
                         {
                             this.state.showError &&

@@ -1,3 +1,6 @@
+- import a library of Material Design by Google for icons:
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
