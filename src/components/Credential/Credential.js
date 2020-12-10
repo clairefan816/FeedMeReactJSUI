@@ -124,7 +124,7 @@ class Credential extends Component {
                         {
                             !this.state.switchToRegister &&
                             <>
-                                <label htmlFor="userId">User Id: </label>
+                                <label htmlFor="userId">UserName: </label>
                                 <input type="text" name="userId" onChange={this.handleUserIdChange}/><br/><br/>
                                 <label htmlFor="password">Password: </label>
                                 <input type="text" name="password" onChange={this.handlePasswordChange}/>
@@ -168,7 +168,7 @@ class Credential extends Component {
                                 <input type="text" name="location" onChange={this.handleLocationChange}/><br/><br/>
                             </>
                         }
-                        <input type="submit" value="Submit"/>
+                        <input className="ButtonSubmit" type="submit" value="Submit"/>
                         {
                             !this.state.switchToRegister &&
                             <p className="SignUp" onClick={() => {
