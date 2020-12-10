@@ -1,4 +1,4 @@
-- import a library of Material Design by Google for icons:
+- import Google Material Design:
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 # Getting Started with Create React App

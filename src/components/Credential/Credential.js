@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './Credential.css'
 import axios from 'axios';
 import {Redirect, useHistory} from "react-router-dom";
+import CUSTOMER from "./customer.png"
+
 
 class Credential extends Component {
 
@@ -19,6 +21,8 @@ class Credential extends Component {
             location: ''
         };
     }
+
+
 
     switchToRegister = () => {
         this.setState({switchToRegister: true})
@@ -58,6 +62,8 @@ class Credential extends Component {
         window.sessionStorage.setItem('loggedin', 'true');
         this.props.history.push('/home');
     }
+
+
 
 
     submit = (event) => {
@@ -139,10 +145,10 @@ class Credential extends Component {
                         {
                             !this.state.switchToRegister &&
                             <>
-                                <label htmlFor="userId"><i className="material-icons">person</i>&nbsp;</label>
-                                <input type="text" name="userId" placeholder="Username" onChange={this.handleUserIdChange}/><br/><br/>
+                                <label  htmlFor="userId"><i className="material-icons">person</i>&nbsp;</label>
+                                <input className="form-input" type="text" name="userId" placeholder="Username" onChange={this.handleUserIdChange}/><br/><br/>
                                 <label htmlFor="password"><i className="material-icons">lock</i>&nbsp;</label>
-                                <input type="text" name="password" placeholder="Password" onChange={this.handlePasswordChange}/>
+                                <input className="form-input" type="text" name="password" placeholder="Password" onChange={this.handlePasswordChange}/>
                                 <br/>
                                 <br/>
                             </>
@@ -150,15 +156,16 @@ class Credential extends Component {
                         {
                             this.state.switchToRegister &&
                             <>
-                            <div>
-                                <label>
-                                    Choose type of user: {"  "}
+                                <div >
+                                    <label>
+                                        Choose type of user: {"  "}
 
-                                        <select value={this.state.userType} onChange={this.handleUserTypeChange}>
+                                        <select className="icons" value={this.state.userType} onChange={this.handleUserTypeChange}>
                                             <option value='customer'>Customer</option>
                                             <option value='restaurant'>Restaurant</option>
                                             <option value='courier'>Courier</option>
                                         </select>
+
                                 </label>
                             </div>
                                 <br/><br/>
@@ -167,14 +174,14 @@ class Credential extends Component {
                         {
                             this.state.switchToRegister && this.state.userType === 'customer' &&
                             <>
-                                <label htmlFor="name">Name: </label>
-                                <input type="text" name="name" onChange={this.handleNameChange}/><br/><br/>
-                                <label htmlFor="email">Email: </label>
-                                <input type="text" name="email" onChange={this.handleEmailChange}/><br/><br/>
-                                <label htmlFor="address">Address: </label>
-                                <input type="text" name="address" onChange={this.handleAddressChange}/><br/><br/>
-                                <label htmlFor="password">Password: </label>
-                                <input type="text" name="password" onChange={this.handlePasswordChange}/>
+                                <label htmlFor="name"><i className="material-icons">person</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="Username" name="name" onChange={this.handleNameChange}/><br/><br/>
+                                <label htmlFor="email"><i className="material-icons">email</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="email" name="email" onChange={this.handleEmailChange}/><br/><br/>
+                                <label htmlFor="address"><i className="material-icons">house</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="address" name="address" onChange={this.handleAddressChange}/><br/><br/>
+                                <label htmlFor="password"><i className="material-icons">lock</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="Password" name="password" onChange={this.handlePasswordChange}/>
                                 <br/>
                                 <br/>
                             </>
@@ -182,21 +189,21 @@ class Credential extends Component {
                         {
                             this.state.switchToRegister && this.state.userType === 'courier' &&
                             <>
-                                <label htmlFor="name">Name: </label>
-                                <input type="text" name="name" onChange={this.handleNameChange}/><br/><br/>
-                                <label htmlFor="location">Location: </label>
-                                <input type="text" name="location" onChange={this.handleLocationChange}/><br/><br/>
+                                <label htmlFor="name"><i className="material-icons">person</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="Username" name="name" onChange={this.handleNameChange}/><br/><br/>
+                                <label htmlFor="location"><i className="material-icons">location_on</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="Location" name="location" onChange={this.handleLocationChange}/><br/><br/>
                             </>
                         }
                         {
                             this.state.switchToRegister && this.state.userType === 'restaurant' &&
                             <>
-                                <label htmlFor="name">Name: </label>
-                                <input type="text" name="name" onChange={this.handleNameChange}/><br/><br/>
-                                <label htmlFor="email">Email: </label>
-                                <input type="text" name="email" onChange={this.handleEmailChange}/><br/><br/>
-                                <label htmlFor="location">Location: </label>
-                                <input type="text" name="location" onChange={this.handleLocationChange}/><br/><br/>
+                                <label htmlFor="name"><i className="material-icons">person</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="Username" name="name" onChange={this.handleNameChange}/><br/><br/>
+                                <label htmlFor="email"><i className="material-icons">email</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="email" name="email" onChange={this.handleEmailChange}/><br/><br/>
+                                <label htmlFor="location"><i className="material-icons">location_on</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="Location" name="location" onChange={this.handleLocationChange}/><br/><br/>
                             </>
                         }
                         <div>

@@ -29,7 +29,7 @@ class Header extends Component {
                     <div className='navbar'>
                     <span className='logo'>
                         <img className='logo_image' src={logoFood} alt="logo"/>
-                        <h1>Feed Me</h1>
+                        <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feed Me</h1>
                     </span>
                         <span className="userCart">
                         <img className='logo_image' src={groceryCart} alt="logo"/>
