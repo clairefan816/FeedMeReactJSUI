@@ -30,7 +30,7 @@ class App extends Component {
                         if (window.sessionStorage.getItem("userType") === "customer") {
                             return <>
                                 <SideBar onChange={this.updateCart}/>
-                                <OrderBuilder updateCart={this.state.updateCart}/>}
+                                <OrderBuilder onChange={this.updateCart} updateCart={this.state.updateCart}/>}
                             </>
                         } else if (window.sessionStorage.getItem("userType") === "courier") {
                             return <Pickup/>

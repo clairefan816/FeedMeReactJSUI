@@ -1,8 +1,9 @@
 .SideBar {
     float: left;
     width: 96%;
-    margin: 10% 2%;
-    padding: .8rem 0;
+    margin-right: 20%;
+    margin-top: 15%;
+    /*margin: 15% 10% 35% 10%;*/
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -11,6 +12,7 @@
     text-align: center;
     font-size: 1.7rem;
     transform: translateX(-80px);
+    font-family: 'Neucha', cursive;
 }
 
 .rest{

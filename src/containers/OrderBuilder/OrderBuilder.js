@@ -75,7 +75,7 @@ class OrderBuilder extends Component {
         console.log("updating cart");
         return (
             <Aux>
-                <Cart content={this.state}/>
+                <Cart onChange = {this.props.onChange} content={this.state}/>
             </Aux>
         )
     }

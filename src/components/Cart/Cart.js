@@ -15,6 +15,30 @@ class Cart extends Component {
         }
     }
 
+    deleteMeal = (meal) => {
+        let data = {};
+        data['id'] = window.sessionStorage.getItem('userId');
+        console.log(data['id']);
+        data['mealPrice'] = meal.mealPrice.toString();
+        data['mealName'] = meal.mealName;
+        data['mealId'] = meal.mealId;
+        data['operation'] = "REMOVE";
+        console.log("Delete item from cart");
+        axios.interceptors.request.use(request => {
+            console.log('Starting Request', JSON.stringify(request, null, 2))
+            return request;
+        })
+        axios.put('http://0.0.0.0:5000/user/cart', data)
+            .then(
+                res => {
+                    this.props.onChange();
+                },
+                rej => {
+                    console.log('Error happens when adding meal to cart.');
+                }
+            );
+    }
+
     orderNow = () => {
         axios.post('http://0.0.0.0:5000/order', {userId: window.sessionStorage.getItem('userId')})
             .then(
@@ -38,7 +62,9 @@ class Cart extends Component {
                             {this.props.content.items.map((item, id) => {
                                 return <div className="cart_item" key={id}>
                                     <span><h3>{item.meal.mealName}({item.quantity})</h3>
-                                        <h3><img src={deleteIcon} alt="delete"/>${item.quantity * item.meal.mealPrice}</h3></span>
+                                        <h3><img src={deleteIcon} alt="delete" onClick={() => {
+                                            this.deleteMeal(item.meal);
+                                        }}/>${item.quantity * item.meal.mealPrice}</h3></span>
                                 </div>
                             })}
                         </div>

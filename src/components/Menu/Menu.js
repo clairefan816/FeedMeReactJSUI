@@ -24,6 +24,10 @@ class Menu extends Component {
         data['mealId'] = meal.mealId;
         data['operation'] = "ADD";
         console.log("Add item to cart");
+        axios.interceptors.request.use(request => {
+            console.log('Starting Request', JSON.stringify(request, null, 2))
+            return request
+        })
         axios.put('http://0.0.0.0:5000/user/cart', data)
             .then(
                 res => {
