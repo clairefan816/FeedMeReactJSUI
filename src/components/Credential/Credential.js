@@ -103,9 +103,13 @@ class Credential extends Component {
             } else if (this.state.userType === 'restaurant') {
                 const restaurantInfo = {
                     name: this.state.name,
-                    email: this.state.email,
-                    location: this.state.location,
+                    // email: this.state.email,
+                    // location: this.state.location,
                 }
+                axios.interceptors.request.use(request => {
+                    console.log('Starting Request', JSON.stringify(request, null, 2))
+                    return request;
+                })
                 axios.post('http://0.0.0.0:5000/restaurant', {...restaurantInfo})
                     .then(
                         res => {
@@ -200,10 +204,10 @@ class Credential extends Component {
                             <>
                                 <label htmlFor="name"><i className="material-icons">person</i>&nbsp;</label>
                                 <input className="form-input" type="text" placeholder="Username" name="name" onChange={this.handleNameChange}/><br/><br/>
-                                <label htmlFor="email"><i className="material-icons">email</i>&nbsp;</label>
-                                <input className="form-input" type="text" placeholder="email" name="email" onChange={this.handleEmailChange}/><br/><br/>
-                                <label htmlFor="location"><i className="material-icons">location_on</i>&nbsp;</label>
-                                <input className="form-input" type="text" placeholder="Location" name="location" onChange={this.handleLocationChange}/><br/><br/>
+                                {/*<label htmlFor="email"><i className="material-icons">email</i>&nbsp;</label>*/}
+                                {/*<input className="form-input" type="text" placeholder="email" name="email" onChange={this.handleEmailChange}/><br/><br/>*/}
+                                {/*<label htmlFor="location"><i className="material-icons">location_on</i>&nbsp;</label>*/}
+                                {/*<input className="form-input" type="text" placeholder="Location" name="location" onChange={this.handleLocationChange}/><br/><br/>*/}
                             </>
                         }
                         <div>

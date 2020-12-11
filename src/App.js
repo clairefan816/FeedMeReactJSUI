@@ -6,6 +6,7 @@ import {BrowserRouter, HashRouter, Redirect, Switch, Route} from "react-router-d
 import SideBar from "./components/SideBar/SideBar";
 import Credential from "./components/Credential/Credential"
 import Pickup from "./components/Pickup/Pickup"
+import Preparing from "./components/Restaurant/Preparing"
 
 
 class App extends Component {
@@ -34,6 +35,8 @@ class App extends Component {
                             </>
                         } else if (window.sessionStorage.getItem("userType") === "courier") {
                             return <Pickup/>
+                        } else if (window.sessionStorage.getItem("userType") === "restaurant"){
+                            return <Preparing/>
                         }
                     }}/>
                     <Route path='/status' render={(props) => <Status {...props}/>}/>
