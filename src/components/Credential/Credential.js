@@ -17,6 +17,7 @@ class Credential extends Component {
             name: '',
             email: '',
             address: '',
+            phone: '',
             password: '',
             location: ''
         };
@@ -50,6 +51,10 @@ class Credential extends Component {
 
     handlePasswordChange = (event) => {
         this.setState({password: event.target.value});
+    }
+
+    handlePhoneChange = (event) => {
+        this.setState({phone: event.target.value});
     }
 
     handleLocationChange = (event) => {
@@ -103,13 +108,13 @@ class Credential extends Component {
             } else if (this.state.userType === 'restaurant') {
                 const restaurantInfo = {
                     name: this.state.name,
-                    // email: this.state.email,
-                    // location: this.state.location,
+                    phone: this.state.phone,
+                    address: this.state.address,
                 }
-                axios.interceptors.request.use(request => {
-                    console.log('Starting Request', JSON.stringify(request, null, 2))
-                    return request;
-                })
+                // axios.interceptors.request.use(request => {
+                //     console.log('Starting Request', JSON.stringify(request, null, 2))
+                //     return request;
+                // })
                 axios.post('http://0.0.0.0:5000/restaurant', {...restaurantInfo})
                     .then(
                         res => {
@@ -144,11 +149,12 @@ class Credential extends Component {
         } else {
             return (
                 <div className="Login">
-                    <h2>Log In</h2>
+                    {/*<h2>Log In</h2>*/}
                     <form onSubmit={this.submit}>
                         {
                             !this.state.switchToRegister &&
                             <>
+                                <h2>Log In</h2>
                                 <label  htmlFor="userId"><i className="material-icons">person</i>&nbsp;</label>
                                 <input className="form-input" type="text" name="userId" placeholder="Username" onChange={this.handleUserIdChange}/><br/><br/>
                                 <label htmlFor="password"><i className="material-icons">lock</i>&nbsp;</label>
@@ -161,6 +167,7 @@ class Credential extends Component {
                             this.state.switchToRegister &&
                             <>
                                 <div >
+                                    <h2>Register</h2>
                                     <label>
                                         Choose type of user: {"  "}
 
@@ -204,10 +211,10 @@ class Credential extends Component {
                             <>
                                 <label htmlFor="name"><i className="material-icons">person</i>&nbsp;</label>
                                 <input className="form-input" type="text" placeholder="Username" name="name" onChange={this.handleNameChange}/><br/><br/>
-                                {/*<label htmlFor="email"><i className="material-icons">email</i>&nbsp;</label>*/}
-                                {/*<input className="form-input" type="text" placeholder="email" name="email" onChange={this.handleEmailChange}/><br/><br/>*/}
-                                {/*<label htmlFor="location"><i className="material-icons">location_on</i>&nbsp;</label>*/}
-                                {/*<input className="form-input" type="text" placeholder="Location" name="location" onChange={this.handleLocationChange}/><br/><br/>*/}
+                                <label htmlFor="phone"><i className="material-icons">phone</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="PhoneNo." name="phone" onChange={this.handlePhoneChange}/><br/><br/>
+                                <label htmlFor="address"><i className="material-icons">location_on</i>&nbsp;</label>
+                                <input className="form-input" type="text" placeholder="address" name="address" onChange={this.handleAddressChange}/><br/><br/>
                             </>
                         }
                         <div>
