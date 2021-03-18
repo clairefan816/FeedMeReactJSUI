@@ -1,73 +1,31 @@
-- import Google Material Design:
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+# App Name: Feed ME
+# General flow of the app
 
-# Getting Started with Create React App
+## login service and make an order
+![1](https://user-images.githubusercontent.com/54572005/111583677-01bf3480-877a-11eb-8026-1c5f91cc4b4b.gif)
+## Restaurants receive the order and preparing it
+![2](https://user-images.githubusercontent.com/54572005/111583688-0388f800-877a-11eb-8e10-136f87148c1d.gif)
+## Couriers pick up the order and delivery it
+![3](https://user-images.githubusercontent.com/54572005/111583697-0552bb80-877a-11eb-8d0d-96b403fbe7e1.gif)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Both front-end and back-end work has been depployed on Heroku
+- Frontend url: https://quiet-thicket-01896.herokuapp.com/login
+- Backend url: https://morning-bastion-48964.herokuapp.com/restauran
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### General Functions
+The food delivery service is designed and implemented to simulate the following real-world
+user cases:
+● It supports basic operations for customers, restaurants and couriers;
+● From a customer’s perspective:
+○ The front-end website should display available restaurants info by default;
+○ Customer has the ability to sign up, login and log out;
+○ Customer has the ability to select meals;
+○ Customer has the ability to check out and place an order;
+○ Customer has the ability to track the status of the order;
+● From a courier’s perspective:
+○ Courier has the ability to sign up, login and log out;
+○ Courier has the ability to pick up an order based on the orderId;
+○ Courier has the ability to deliver an order based on the orderId;
+● From a restaurant’s perspective:
+○ The restaurant has the ability to sign up, login and log out;
+○ The restaurant needs to ability to change the status of an order
