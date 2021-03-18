@@ -1,11 +1,13 @@
 # App Name: Feed ME
 ### General flow of the app
 
-* login service and make an order
+* login service and make an order\
 ![1](https://user-images.githubusercontent.com/54572005/111583677-01bf3480-877a-11eb-8026-1c5f91cc4b4b.gif)
-* Restaurants receive the order and preparing it
+
+* Restaurants receive the order and preparing it\
 ![2](https://user-images.githubusercontent.com/54572005/111583688-0388f800-877a-11eb-8e10-136f87148c1d.gif)
-* Couriers pick up the order and delivery it
+
+* Couriers pick up the order and delivery it\
 ![3](https://user-images.githubusercontent.com/54572005/111583697-0552bb80-877a-11eb-8d0d-96b403fbe7e1.gif)
 
 ### Both front-end and back-end work has been depployed on Heroku
